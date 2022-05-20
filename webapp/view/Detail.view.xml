@@ -1,0 +1,45 @@
+<mvc:View
+	controllerName="sap.ui.demo.projekt.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form">
+	<Page
+		title="{i18n>employeeDetails} {employees>FirstName} {employees>LastName}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		titleAlignment="Center">
+
+		<content>
+			<Panel
+				width="auto"
+				class="sapUiResponsiveMargin sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>employeeIDNumber} {employees>EmployeeID}" />
+							<ToolbarSpacer />
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<f:SimpleForm>
+							<f:content>
+								<Label text="First Name" />
+								<Text text="{employees>FirstName} " />
+								<Label text="Last Name" />
+								<Text text="{employees>LastName} " />
+								<Label text="Address" />
+								<Text text="{employees>Address} " />
+								<Label text="City" />
+								<Text text="{employees>City} {employees>Region}" />
+								<Label text="Postal Code" />
+								<Text text="{employees>PostalCode} " />
+								<Label text="Phone (Home)" />
+								<Text text="{employees>HomePhone} " />
+								<Label text="Country" />
+								<Text text="{employees>Country} " />
+							</f:content>
+						</f:SimpleForm>
+					</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

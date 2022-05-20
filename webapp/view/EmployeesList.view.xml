@@ -1,0 +1,45 @@
+<mvc:View
+		controllerName="sap.ui.demo.projekt.controller.EmployeesList"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc">
+	<Table
+		id="employeesList"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		items="{
+			path : 'employees>/Employees',
+			sorter : {
+				path : 'EmployeeID'
+			}
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>employeeName}"/>
+				<ToolbarSpacer/>
+				<SearchField width="50%" search=".onFilterEmployees"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column
+				hAlign="Start"
+				minScreenWidth="Small"
+				demandPopin="true"
+				width="10em">
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem
+				type="Navigation"
+				press=".onPress">
+				<cells>
+					<ObjectNumber number="{employees>FirstName} {employees>LastName}" emphasized="false"/>
+					<ObjectIdentifier title="{employess>EmployeeID}"/>
+					<Text text="{
+						path: 'employess>LastName',
+					}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+</mvc:View>
